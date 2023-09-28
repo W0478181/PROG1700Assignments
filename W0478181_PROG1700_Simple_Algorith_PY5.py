@@ -6,14 +6,17 @@
 #V.4
 # Programming Language: Python 3
 #License: Creative Commons
-# #Repository: <GitHub URL>
+# #Repository: <https://github.com/W0478181/PROG1700Assignments>
 import datetime
 current_year = datetime.datetime.now().year
 current_month = datetime.datetime.now().month
 age = None
 month = None
 year_of_birth = None
+yes = "yes"
+no = None
 #This is a function to calculate someones birth year
+#Made some jokes to keep people entertained
 def Birth_year_finder():
     while True:
         try:
@@ -55,9 +58,18 @@ def Birth_year_finder():
         print("I don't think dinosaurs can use python,but you were born in",(year_of_birth))
     
     else:
-        print("You were born in year",(year_of_birth))
-        
-    Birth_year_finder()
-#Repeated Function to make easier instead of running 5 times
-#Made some jokes to keep people entertained
+        print("You were born in year",(year_of_birth))   
+
 Birth_year_finder()
+def Repeat_algorithm():
+    while True:
+        #conerts users response to lower case so function doesnt break
+        repeat=(input("Would you like to try the algorithm again?(yes or no),:" ).lower())
+        if repeat == yes:
+            Birth_year_finder()
+
+        else:
+            break
+               
+#Option to Repeat function if user wants
+Repeat_algorithm()
