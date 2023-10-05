@@ -20,7 +20,7 @@ while True:
             #Calculate computer's value
             computer_value = random.randrange(1,4,1)
             # Determine the computer's choice
-            #Determine winner
+            #Determine winner 
             if user_imput == computer_value:
                 print("It's a tie!")
             elif ((user_imput == 1 and computer_value == 3) or (user_imput == 2 and computer_value == 1) or (user_imput == 3 and computer_value == 2)):
