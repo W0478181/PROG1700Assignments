@@ -77,3 +77,4 @@ while True:
         if error_count >= 3:
             print("3 strikes and your out,try again when your ready")
             sys.exit()
+            
