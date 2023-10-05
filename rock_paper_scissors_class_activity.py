@@ -11,14 +11,14 @@ computer_choice = None
 error_count = 0
 #Program Control
 while True:
-    user_imput = input("Press 1 for rock, 2 for paper, 3 for scissors:")
-    #Validate the input to ensure the program has valid imput
+    user_input = input("Press 1 for rock, 2 for paper, 3 for scissors:")
+    #Validate the input to ensure the program has valid input
     #Return true is a digit is entered or else false
-    if user_imput.isdigit():
+    if user_input.isdigit():
         #Cast to an integer
-        user_imput = int(user_imput)
+        user_input = int(user_input)
         # 1,2,3 numbers only
-        if user_imput <=3 and user_imput >=1:
+        if user_input <=3 and user_input >=1:
             #Calculate computer's value
                 computer_value = random.randrange(1,4,1)
                 # Determine the computer's choice
@@ -29,14 +29,14 @@ while True:
                 else:
                     computer_choice = "scissors"
                 # Determine the user's choice
-                if user_imput == 1:
+                if user_input == 1:
                     user_choice = "rock"
-                elif user_imput == 2:
+                elif user_input == 2:
                     user_choice = "paper"
-                elif user_imput == 3:
+                elif user_input == 3:
                     user_choice = "scissors"
                 else:
-                    #If 3 imput errors occur any point while playing user will get error message and code will shut down 
+                    #If 3 input errors occur any point while playing user will get error message and code will shut down 
                     print("Please enter a valid number.")
                     error_count += 1
                     if error_count >= 3:
@@ -46,9 +46,9 @@ while True:
                 print(f"You chose {user_choice} and the computer chose {computer_choice}")
 
                 # Determine the winner or tell user there was a tie
-                if user_imput == computer_value:
+                if user_input == computer_value:
                     print("It's a tie!")
-                elif ((user_imput == 1 and computer_value == 3) or (user_imput == 2 and computer_value == 1) or (user_imput == 3 and computer_value == 2)):
+                elif ((user_input == 1 and computer_value == 3) or (user_input == 2 and computer_value == 1) or (user_input == 3 and computer_value == 2)):
                     print("You win!")
                 else:
                     print("Computer wins!")
