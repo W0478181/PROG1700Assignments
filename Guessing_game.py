@@ -1,10 +1,10 @@
 #W0478181
 #Repository: <https://github.com/W0478181/PROG1700Assignments>
 #Import Modules and variables
-# Import Modules and variables
+#Import Modules and variables
 import random
 import sys
-# Initialize variables
+#Initialize variables
 yes = "yes"
 no = "no"
 # Ask Users for their name
@@ -21,7 +21,7 @@ def error():
     if error_count == 3:
         print("3 strikes and you're out, try again when you're ready")
         sys.exit()
-error
+error()
 while True:
     user_name = input("Hello, My Name is Al Gorithm, What is yours: ")
     # Users must enter a name with no digits
