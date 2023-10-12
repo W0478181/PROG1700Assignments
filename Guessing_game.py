@@ -67,3 +67,4 @@ while True:
     else:
         print("Please put yes or no")
         error()
+        error()
