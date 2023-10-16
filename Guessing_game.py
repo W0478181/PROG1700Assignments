@@ -13,7 +13,6 @@ user_guess = None
 user_score = 0
 comp_score = 0
 tries = 0
-
 def error():
     global error_count
     error_count += 1
