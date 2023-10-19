@@ -29,20 +29,20 @@ while True:
         continue
     while tries < 5:
         #Users guess must be a number 1-10 only
-        user_guess = int(input("What is your guess?:"))
-        if 1 <= user_guess <= 10:
-            tries += 1
-            if user_guess == computer_value:
-                user_score += 1
-                print(f"Congrats, you guessed my number on the {tries} try!")
-                print(f"User Score: {user_score}, Al Gorithm Score: {comp_score}")
-                break
-            elif user_guess < computer_value:
-                print("Your guess is too low.")
+        user_guess = (input("What is your guess?:"))
+        if user_guess.isdigit():
+            user_guess = int(user_guess)    
+            if 1 <= user_guess <= 10:
+                tries += 1
+                if user_guess == computer_value:
+                    print(f"Congrats, you guessed my number on the {tries} try!")
+                    break
+                elif user_guess < computer_value:
+                    print("Your guess is too low.")
+                else:
+                    print("Your guess is too high.")
             else:
-                print("Your guess is too high.")
-        else:
-            print("Enter a valid number")
+                print("Enter a valid number")
             error()
     if tries == 5:
         comp_score += 1
