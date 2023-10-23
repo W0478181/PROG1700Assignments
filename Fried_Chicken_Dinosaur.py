@@ -3,12 +3,11 @@
 #Variables
 chicken_in_box = 20
 days = 0
-chicken_eaten_daily = 0
+chicken_eaten_daily = 1
 chicken_eaten_ill = 0
 while chicken_in_box > 0:
     days += 1
     if days == 1:
-        chicken_eaten_daily = 1
         chicken_in_box -= chicken_eaten_daily
         print(f"On day {days} the dinosaur started his new diet of fried chicken, he bought 20 pounds and ate 1. He has {round(chicken_in_box, 2)} pounds left.")
     elif days == 7:
