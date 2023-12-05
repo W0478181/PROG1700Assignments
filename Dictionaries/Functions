@@ -1,0 +1,10 @@
+import sys
+def error():
+    global error_count
+    error_count += 1
+    if error_count == 3:
+        print("3 strikes and you're out, try again when you're ready")
+        sys.exit()
+def again():
+    play_again = input("Do you want to play again? (yes/no): ")
+    return play_again.lower() == "yes"
