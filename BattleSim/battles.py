@@ -1,11 +1,8 @@
-'''
-ORIGINAL BATTLE SIM DONT DELETE
-'''
 #Aiden Connolly
 #W0478181 
-#Prog1700 
+#Prog1400
 #Project:BattleSim
-#V.4
+#V.5
 # Programming Language: Python 3
 
 import time
@@ -45,7 +42,22 @@ def runBattle(player, enemy):
     while player["health"] > 0 and enemy["health"] > 0:
         player_attack = random.randint(0, player["weapon"]["Damage"])
         enemy_attack = random.randint(0, enemy["weapon"]["Damage"])
-        
+        while enemy["health"] <= 15 and enemy["health"] > 0:
+            chance = (random.randint(1,100))
+            potion = (random.randint(1,10))
+            if chance < 20:
+                enemy["health"] += potion
+                print (f"\n{enemy['name']} has used a Health potion and regained {potion} Hp.")
+                print(f"\n{enemy['name']}'s health: {enemy['health']}")
+                
+        while player["health"] <= 15 and player["health"] > 0:
+            chance = (random.randint(1,100))
+            potion = (random.randint(1,10))
+            if chance < 20:
+                player["health"] += potion
+                print (f"\n{player['name']} has used a Health potion and regained {potion} Hp.")
+                print(f"\n{player['name']}'s health: {player['health']}")
+
         if player_attack == 0:
             print(f"\n{player['name']} attacks {enemy['name']} with {player['weapon']['WeaponName']}")
             print(f"\n{player['name']} attack missed {enemy['name']}. {enemy['name']}'s health: {enemy['health']}")
@@ -69,30 +81,6 @@ def runBattle(player, enemy):
             player["health"] = max(0, player["health"] - enemy_attack)
             print(f"\n{enemy['name']} counterattacks {player['name']}  with {enemy['weapon']['WeaponName']} for {enemy_attack} damage. {player['name']}'s health: {player['health']}")
             time.sleep(0.2)
-        
-        if enemy["health"] <= 15 and enemy["health"] > 0:
-            chance = (random.randint(1,100))
-            potion = (random.randint(1,10))
-            if chance < 20:
-                enemy["health"] += potion
-                print (f"\n{enemy['name']} has used a Health potion and regained {potion} Hp.")
-                print(f"\n{enemy['name']}'s health: {enemy['health']}")
-            else:
-                break
-        else:
-            continue
-
-        if player["health"] <= 15 and player["health"] > 0:
-            chance = (random.randint(1,100))
-            potion = (random.randint(1,10))
-            if chance < 20:
-                player["health"] += potion
-                print (f"\n{player['name']} has used a Health potion and regained {potion} Hp.")
-                print(f"\n{player['name']}'s health: {player['health']}")
-            else:
-                break
-        else:
-            continue
 
     if enemy["health"] <= 0:
         print(f"\n{player['name']} has defeated {enemy['name']}")
